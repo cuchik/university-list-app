@@ -1,0 +1,82 @@
+@import 'src/assets/scss/base/colors';
+
+.sideBar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: $primary;
+  width: 250px;
+  top: 0px;
+  bottom: 0px;
+  padding: 25px 15px 80px 15px;
+  transition: All 0.5s ease;
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
+  &.isHide {
+    width: 50px;
+    .logout {
+      left: 0;
+      right: 0;
+      width: 50px;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+.menus {
+  ul {
+    padding: 0;
+    margin: 20px 0;
+    li {
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        &.active {
+          color: $secondary;
+        }
+      }
+      &:hover {
+        a {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
+.logout {
+  position: absolute;
+  left: 15px;
+  bottom: 20px;
+}
+.componentContainer {
+  margin-left: 250px;
+  padding: 20px;
+}
+.actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.wrapper {
+  &.isHideSidebar {
+    .componentContainer {
+      margin-left: 50px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .sideBar {
+    z-index: 10;
+  }
+  .componentContainer {
+    margin-left: 50px;
+    z-index: 1;
+  }
+}
